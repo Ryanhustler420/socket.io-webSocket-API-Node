@@ -1,4 +1,13 @@
 <script>
+  // this is client
+  let ws = new WebSocket('ws://localhost:8000');
 
-    
+  ws.addEventListener('open', function(event) {
+    ws.send('Hello Server!');
+  });
+
+  ws.onmessage = event => {
+    console.log(event);
+  };
+  
 </script>
