@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Ryanhustler420/socket.io-webSocket-API-Node#readme",
   "dependencies": {
+    "socket.io": "^2.2.0",
     "ws": "^7.0.0"
   }
 }
