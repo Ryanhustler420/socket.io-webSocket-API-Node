@@ -1,0 +1,23 @@
+{
+  "name": "socket.io-webSocket-API-Node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "iwsServer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ryanhustler420/socket.io-webSocket-API-Node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ryanhustler420/socket.io-webSocket-API-Node/issues"
+  },
+  "homepage": "https://github.com/Ryanhustler420/socket.io-webSocket-API-Node#readme",
+  "dependencies": {
+    "ws": "^7.0.0"
+  }
+}
