@@ -6,7 +6,12 @@ app.use(express.static(__dirname + '/public'));
 
 const expressServer = app.listen(9000);
 
-const io = scoketio(expressServer);
+// const io = scoketio(expressServer);
+
+// OR
+
+const io = scoketio();
+io.attach(expressServer);
 
 io.on('connection', socket => {
   socket.emit('messageFromServer', {data: 'Hey Client'});
