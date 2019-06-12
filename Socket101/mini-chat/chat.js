@@ -9,9 +9,11 @@ const expressServer = app.listen(9000);
 const io = scoketio(expressServer);
 
 io.on('connection', socket => {
-  console.log(socket.id);
-  socket.emit('messageFromServer', {data: 'Welcome to the socketio server!'});
+  socket.emit('messageFromServer', {data: 'Hey Client'});
   socket.on('dataToServer', dataFromClient => {
     console.log(dataFromClient);
+  });
+  socket.on('newMessageToServer', msg => {
+    io.emit('messageToClient', {text: msg.text});
   });
 });
