@@ -7,6 +7,10 @@ rootSocket.on('messageFromServer', dataFromServer => {
   rootSocket.emit('dataToServer', {data: 'Data from the Client'});
 });
 
+rootSocket.on('joined', msg => {
+  console.log(msg);
+});
+
 adminSocket.on('welcome', datafromserver => {
   console.log(datafromserver);
 });

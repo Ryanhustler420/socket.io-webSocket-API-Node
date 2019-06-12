@@ -14,6 +14,13 @@ io.on('connection', socket => {
   socket.on('dataToServer', dataFromClient => {
     console.log(dataFromClient);
   });
+  socket.join('level1');
+  //   socket
+  //     .to('level1')
+  //     .emit('joined', `${socket.id} I have joined the level 1 room!`);
+  io.of('/')
+    .to('level1')
+    .emit('joined', `${socket.id} I have joined the level 1 room!`);
 });
 
 // Only for /admin namespace
