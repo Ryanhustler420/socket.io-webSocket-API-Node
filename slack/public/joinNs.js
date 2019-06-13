@@ -13,11 +13,9 @@ function joinNs(endpoint) {
     let roomList = document.querySelector('.room-list');
     roomList.innerHTML = '';
     nsRooms.forEach(room => {
-      let glyph;
+      let glyph = 'globe';
       if (room.privateRoom) {
         glyph = 'lock';
-      } else {
-        glyph = 'globe';
       }
       roomList.innerHTML += `<li class="room"><span class="glyphicon glyphicon-${glyph}"></span>${
         room.roomTitle
