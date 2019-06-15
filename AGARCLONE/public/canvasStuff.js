@@ -1,5 +1,6 @@
 function init() {
   draw();
+  // console.log(orbs);
 }
 
 /**
@@ -10,12 +11,12 @@ player.locX = Math.floor(500 * Math.random() + 100);
 player.locY = Math.floor(500 * Math.random() + 100);
 
 function draw() {
+  // reset the translation back to default!
+  context.setTransform(1, 0, 0, 1, 0, 0);
+
   // clear the screen out so the old circle is gone from the last frame
   context.clearRect(0, 0, canvas.width, canvas.height);
   // context is defined inside uiStuff.js
-
-  // reset the translation back to default!
-  context.setTransform(1, 0, 0, 1, 0, 0);
 
   const camX = -player.locX + canvas.width / 2;
   const camY = -player.locY + canvas.height / 2;
@@ -29,13 +30,19 @@ function draw() {
   // arg4 = where to start on circle in radians, 0 = 3:00pm
   // arg5 = where to stop in radians
   context.arc(player.locX, player.locY, 10, 0, Math.PI * 2);
-  context.arc(200, 200, 10, 0, Math.PI * 2);
+  // context.arc(200, 200, 10, 0, Math.PI * 2);
   context.fill();
   context.lineWidth = 5;
   context.strokeStyle = 'rgb(0,255,0)';
   context.stroke();
   // call the function itself with 'increement number value'
   // kind of recurtion function
+  orbs.forEach(orb => {
+    context.beginPath();
+    context.fillStyle = orb.color;
+    context.arc(orb.locX, orb.locY, orb.radius, 0, Math.PI * 2);
+    context.fill();
+  });
   requestAnimationFrame(draw);
 }
 
